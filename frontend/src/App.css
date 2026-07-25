@@ -1,0 +1,131 @@
+:root {
+  --bg: #EEF2ED;
+  --surface: #FFFFFF;
+  --ink: #1B2B24;
+  --ink-soft: #4B5D54;
+  --teal: #2F6F63;
+  --coral: #C1440E;
+  --amber: #B8842E;
+  --line: #D7DED4;
+  --panel: #16241E;
+
+  --tint-mint: #CDE7DA;
+  --tint-clay: #F3D9BE;
+  --tint-lavender: #DCCFEE;
+  --tint-navy: #101E2E;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { overflow-x: hidden; width: 100%; }
+
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; }
+.mono { font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.02em; }
+
+.eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin: 0 0 8px; }
+.eyebrow-light { color: #8FD9C4; }
+
+h1, h2, h3 { font-family: 'Fraunces', serif; margin: 0; color: var(--ink); }
+
+/* HERO */
+/* HERO */
+.hero {
+  position: relative;
+  background: var(--panel);
+  padding: 48px 24px 32px;
+  max-width: 1080px;   /* ADD THIS — matches .section's width */
+  margin: 0 auto;      /* ADD THIS — centers it like .section */
+  border-radius: 24px; /* ADD THIS — matches .section's rounded corners */
+}
+.hero-grid { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+
+.hero-title { font-size: 46px; font-weight: 600; color: #fff; }
+.hero-title-accent { color: #7FCBB3; }
+.hero-sub { color: #C9D6CE; font-size: 15px; line-height: 1.6; margin-top: 12px; max-width: 460px; }
+
+.hero-image { border-radius: 18px; overflow: hidden; height: 320px; box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
+.hero-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.tool-compact { margin-top: 24px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 20px; max-width: 380px; }
+
+.file-input { display: inline-block; background: var(--teal); color: white; padding: 9px 16px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 500; }
+.file-input input { display: none; }
+
+.tool-preview-small { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; margin-top: 12px; display: block; }
+
+button { margin-top: 14px; width: 100%; padding: 11px; background: #fff; color: var(--ink); border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; }
+button:disabled { background: #6B7A73; color: #ccc; cursor: not-allowed; }
+
+.error { color: #FF9B7A; font-size: 13px; margin-top: 10px; }
+
+/* RESULT PANEL (full width, under hero grid) */
+.result-panel { max-width: 1080px; margin: 32px auto 0; background: var(--surface); border-radius: 16px; padding: 28px; box-shadow: 0 12px 40px rgba(0,0,0,0.2); }
+
+.verdict { text-align: center; padding-bottom: 20px; border-bottom: 1px solid var(--line); margin-bottom: 20px; }
+.verdict-label { color: var(--ink-soft); font-size: 11px; }
+.verdict-name { font-size: 30px; margin: 8px 0 10px; }
+.verdict-desc { max-width: 520px; margin: 12px auto 0; color: var(--ink-soft); font-size: 14px; line-height: 1.6; }
+
+.result-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+.readout-label { display: block; font-size: 11px; color: var(--ink-soft); margin-bottom: 10px; }
+.readout-row { margin-bottom: 16px; }
+.readout-row.primary .readout-name { color: var(--teal); }
+.readout-row-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.readout-name { font-weight: 600; font-size: 14px; }
+
+.risk-tag { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; color: white; display: inline-block; }
+.risk-low { background: var(--teal); }
+.risk-moderate { background: var(--amber); }
+.risk-high { background: var(--coral); }
+
+.bar-bg { background: #E1E7DE; height: 6px; border-radius: 3px; overflow: hidden; }
+.bar-fill { background: var(--ink); height: 100%; }
+.readout-pct { font-size: 11px; color: var(--ink-soft); }
+
+.gradcam-block img { width: 100%; border-radius: 8px; margin-top: 8px; }
+.caption { font-size: 12px; color: var(--ink-soft); margin-top: 6px; }
+
+.disclaimer { max-width: 1080px; margin: 20px auto 0; font-size: 13px; color: #C9D6CE; border-left: 3px solid var(--amber); padding-left: 12px; }
+
+/* SECTIONS */
+.section { max-width: 1080px; margin: 48px auto; padding: 56px 32px; border-radius: 24px; }
+.section h2 { font-size: 32px; font-weight: 600; color: var(--ink) !important; }
+.section-lede { color: var(--ink-soft); max-width: 560px; margin-top: 8px; }
+
+.abcde-section { background: var(--tint-lavender); }
+.specimen-section { background: var(--tint-clay); }
+
+.abcde-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 32px; }
+.abcde-card { background: var(--surface); border-radius: 12px; padding: 20px 16px; }
+.abcde-letter { font-family: 'Fraunces', serif; font-size: 36px; color: var(--teal); display: block; }
+.abcde-label { font-weight: 600; font-size: 14px; display: block; margin: 4px 0 8px; }
+.abcde-card p { font-size: 13px; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+
+.specimen-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 32px; }
+.specimen-card { background: var(--surface); border-radius: 14px; padding: 20px; border-top: 4px solid var(--teal); }
+.specimen-card:has(.risk-high) { border-top-color: var(--coral); }
+.specimen-card:has(.risk-moderate) { border-top-color: var(--amber); }
+.specimen-top { display: flex; justify-content: space-between; align-items: center; }
+.swatch { width: 40px; height: 40px; }
+.specimen-code { font-size: 11px; color: var(--ink-soft); }
+.specimen-card h3 { font-size: 18px; margin-top: 14px; }
+.specimen-common { font-size: 12px; color: var(--ink-soft); display: block; margin-bottom: 10px; }
+.specimen-card p { font-size: 13px; line-height: 1.6; color: var(--ink); margin-bottom: 12px; }
+
+.method-section { background: var(--tint-navy); color: #fff; }
+.method-section h2, .method-section .eyebrow, .method-section .section-lede { color: #fff !important; }
+.stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0; padding: 24px; background: rgba(255,255,255,0.06); border-radius: 14px; }
+.stat { text-align: center; }
+.stat-num { display: block; font-size: 28px; color: #fff; }
+.stat-label { font-size: 12px; color: #A9BBAF; }
+.method-note { color: #C9D6CE; line-height: 1.7; font-size: 14px; }
+
+.footer { text-align: center; padding: 32px 24px 48px; font-size: 12px; color: var(--ink-soft); }
+
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-image { height: 220px; }
+  .result-columns { grid-template-columns: 1fr; }
+  .abcde-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-row { grid-template-columns: repeat(2, 1fr); }
+}
