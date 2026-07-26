@@ -48,7 +48,7 @@ function App() {
     const formData = new FormData()
     formData.append('file', selectedFile)
     try {
-      const response = await axios.post('http://127.0.0.1:8000/predict', formData, {
+      const response = await axios.post('https://skin-diagnosis-tool.onrender.com/predict', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       })
       setResult(response.data)
