@@ -8,6 +8,7 @@ import numpy as np
 import cv2
 import base64
 import os
+import gc
 os.environ["OMP_NUM_THREADS"] = "1"
 torch.set_num_threads(1)
 
@@ -82,7 +83,7 @@ def predict(image_bytes):
     # ---- Grad-CAM heatmap for the TOP predicted class ----
     top_class_idx = top3_idx[0].item()
     grayscale_cam = cam(input_tensor=image_tensor, targets=None)[0]  # targets=None uses the top predicted class
-
+    gc.collect()
     # Convert original image to a normalized numpy array (0-1 range) for overlay
     rgb_img = np.array(image_resized).astype(np.float32) / 255.0
     cam_overlay = show_cam_on_image(rgb_img, grayscale_cam, use_rgb=True)
