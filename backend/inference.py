@@ -8,6 +8,8 @@ import numpy as np
 import cv2
 import base64
 import os
+os.environ["OMP_NUM_THREADS"] = "1"
+torch.set_num_threads(1)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_DIR = os.path.join(BASE_DIR, '..', 'model')
